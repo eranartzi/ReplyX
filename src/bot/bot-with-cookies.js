@@ -1,10 +1,10 @@
 import puppeteer from 'puppeteer';
 import { readFileSync } from 'fs';
-import { AIHandler } from './ai-handler.js';
-import { HumanBehavior } from './human-behavior.js';
-import { Storage } from './storage.js';
-import { config } from './config.js';
-import { UltraContextLogger } from './ultracontext-logger.js';
+import { AIHandler } from '../utils/ai-handler.js';
+import { HumanBehavior } from '../utils/human-behavior.js';
+import { Storage } from '../utils/storage.js';
+import { config } from '../config/config.js';
+import { UltraContextLogger } from '../utils/ultracontext-logger.js';
 
 class TwitterBot {
   constructor() {

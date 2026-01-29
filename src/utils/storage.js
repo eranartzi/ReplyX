@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { config } from './config.js';
+import { config } from '../config/config.js';
 
 export class Storage {
   static loadCommentedPosts() {

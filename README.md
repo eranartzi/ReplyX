@@ -99,8 +99,8 @@ With UltraContext, you can:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/replyx.git
-   cd replyx
+   git clone https://github.com/justin55afdfdsf5ds45f4ds5f45ds4/ReplyX.git
+   cd ReplyX
    ```
 
 2. **Install dependencies**
@@ -121,30 +121,14 @@ With UltraContext, you can:
 
 4. **Set up Twitter cookies**
    
-   a. Open Chrome with your Twitter account logged in
+   See [docs/GET-COOKIES.md](docs/GET-COOKIES.md) for detailed instructions.
    
-   b. Go to https://twitter.com
-   
-   c. Press `F12` to open DevTools
-   
-   d. Go to **Application** tab → **Cookies** → **https://twitter.com**
-   
-   e. Find and copy these cookie values:
-      - `auth_token`
-      - `ct0`
-   
-   f. Create `twitter-cookies.json`:
+   Quick steps:
    ```bash
    cp twitter-cookies.example.json twitter-cookies.json
    ```
    
-   g. Edit `twitter-cookies.json` and paste your cookie values:
-   ```json
-   {
-     "auth_token": "your_auth_token_value",
-     "ct0": "your_ct0_value"
-   }
-   ```
+   Then add your Twitter cookies to `twitter-cookies.json`.
 
 ---
 
@@ -153,7 +137,7 @@ With UltraContext, you can:
 ### Start the Bot
 
 ```bash
-node bot-with-cookies.js
+npm start
 ```
 
 The bot will:
@@ -165,7 +149,7 @@ The bot will:
 ### View Activity History
 
 ```bash
-node view-history.js <context-id>
+npm run history <context-id>
 ```
 
 The context ID is displayed when the bot starts:
@@ -173,11 +157,26 @@ The context ID is displayed when the bot starts:
 📊 UltraContext initialized: ctx_abc123xyz
 ```
 
+### Project Structure
+
+See [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed architecture.
+
+```
+ReplyX/
+├── src/
+│   ├── bot/              # Bot implementations
+│   ├── config/           # Configuration
+│   └── utils/            # Utilities & helpers
+├── scripts/              # CLI tools & launchers
+├── docs/                 # Documentation
+└── index.js              # Main entry point
+```
+
 ---
 
-## ⚙️ Configuration
+### ⚙️ Configuration
 
-Edit `config.js` to customize behavior:
+Edit `src/config/config.js` to customize behavior:
 
 ```javascript
 export const config = {

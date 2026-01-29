@@ -5,7 +5,7 @@
 If you discover a security vulnerability in ReplyX, please report it responsibly:
 
 1. **DO NOT** open a public GitHub issue
-2. Email security concerns to: security@replyx.dev (or your email)
+2. Email security concerns to: justinlord@empusaai.com
 3. Include detailed steps to reproduce the vulnerability
 4. Allow up to 48 hours for initial response
 
@@ -92,8 +92,7 @@ Before running the bot:
 
 ## 📞 Contact
 
-For security concerns: security@replyx.dev
-For general support: support@replyx.dev
+For security concerns: justinlord@empusaai.com
 
 ---
 

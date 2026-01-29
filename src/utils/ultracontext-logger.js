@@ -1,5 +1,5 @@
 import { UltraContext } from 'ultracontext';
-import { config } from './config.js';
+import { config } from '../config/config.js';
 
 class UltraContextLogger {
   constructor() {
