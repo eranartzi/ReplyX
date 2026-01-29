@@ -100,7 +100,7 @@ With UltraContext, you can:
 1. **Clone the repository**
    ```bash
    git clone https://github.com/justin55afdfdsf5ds45f4ds5f45ds4/ReplyX.git
-   cd ReplyX
+   cd replyx
    ```
 
 2. **Install dependencies**
@@ -121,14 +121,30 @@ With UltraContext, you can:
 
 4. **Set up Twitter cookies**
    
-   See [docs/GET-COOKIES.md](docs/GET-COOKIES.md) for detailed instructions.
+   a. Open Chrome with your Twitter account logged in
    
-   Quick steps:
+   b. Go to https://twitter.com
+   
+   c. Press `F12` to open DevTools
+   
+   d. Go to **Application** tab → **Cookies** → **https://twitter.com**
+   
+   e. Find and copy these cookie values:
+      - `auth_token`
+      - `ct0`
+   
+   f. Create `twitter-cookies.json`:
    ```bash
    cp twitter-cookies.example.json twitter-cookies.json
    ```
    
-   Then add your Twitter cookies to `twitter-cookies.json`.
+   g. Edit `twitter-cookies.json` and paste your cookie values:
+   ```json
+   {
+     "auth_token": "your_auth_token_value",
+     "ct0": "your_ct0_value"
+   }
+   ```
 
 ---
 
@@ -137,7 +153,7 @@ With UltraContext, you can:
 ### Start the Bot
 
 ```bash
-npm start
+node bot-with-cookies.js
 ```
 
 The bot will:
@@ -149,7 +165,7 @@ The bot will:
 ### View Activity History
 
 ```bash
-npm run history <context-id>
+node view-history.js <context-id>
 ```
 
 The context ID is displayed when the bot starts:
@@ -157,26 +173,11 @@ The context ID is displayed when the bot starts:
 📊 UltraContext initialized: ctx_abc123xyz
 ```
 
-### Project Structure
-
-See [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md) for detailed architecture.
-
-```
-ReplyX/
-├── src/
-│   ├── bot/              # Bot implementations
-│   ├── config/           # Configuration
-│   └── utils/            # Utilities & helpers
-├── scripts/              # CLI tools & launchers
-├── docs/                 # Documentation
-└── index.js              # Main entry point
-```
-
 ---
 
-### ⚙️ Configuration
+## ⚙️ Configuration
 
-Edit `src/config/config.js` to customize behavior:
+Edit `config.js` to customize behavior:
 
 ```javascript
 export const config = {
@@ -297,11 +298,11 @@ The bot also maintains local JSON files:
    - Regenerate API keys if compromised
 
 3. **Monitor for suspicious activity**
-   - Check UltraContext for unusual patterns
-   - Watch for Twitter warnings or rate limits
+   - Check UltraContext for unusual patterns (bot might comment low quaility - depends on your system prompt)
+   - Watch for Twitter warnings or rate limits (Don't worry about this too much, you won't get ban unless you want to act like a jamesbond doing 100 comments in minutes)
 
 4. **Use a dedicated Twitter account**
-   - Don't use your main personal account
+   - Don't use your main personal account (You can still use your own account for personal braniding, just keep in mind to run the bot in limit mentioned above unless you're using a lots of accounts with IP address rotation, which works if you already done it)
    - Create a professional engagement account
 
 ---
@@ -345,7 +346,7 @@ This tool is for educational and research purposes. Users are responsible for co
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/replyx/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/replyx/discussions)
-- **Email**: your.email@example.com
+- **Email**: justinlord@empusaai.com
 
 ---
 
